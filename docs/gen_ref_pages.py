@@ -5,8 +5,10 @@ import mkdocs_gen_files
 
 nav = mkdocs_gen_files.Nav()
 
-for path in sorted(Path("src").rglob("*.py")):
-    module_path = path.relative_to("src").with_suffix("")
+src_path = "src"
+
+for path in sorted(Path(src_path).rglob("*.py")):
+    module_path = path.relative_to(src_path).with_suffix("")
     doc_path = module_path.with_suffix(".md")
     full_doc_path = Path("reference", doc_path)
 
