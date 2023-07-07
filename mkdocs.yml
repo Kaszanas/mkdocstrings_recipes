@@ -32,6 +32,10 @@ markdown_extensions:
           case: lower
   - meta
 plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
   - search
   - include-markdown
   - gen-files:
